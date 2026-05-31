@@ -38,13 +38,7 @@ curl -L -o ~/Downloads/iran-house-price.zip\
 * Pandas
 * NumPy
 * Joblib
-
-## Project Structure
-
-├── app.py
-├── model.pkl
-├── requirements.txt
-└── README.md
+* catboost
 
 ## Installation
 
