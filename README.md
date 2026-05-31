@@ -18,6 +18,13 @@ A machine learning web application built with Streamlit that predicts house pric
   * Address/Location
 * Real-time prediction
 
+for Downloading dataset :
+```
+#!/bin/bash
+curl -L -o ~/Downloads/iran-house-price.zip\
+  https://www.kaggle.com/api/v1/datasets/download/amirjdai/iran-house-price
+```
+
 ## Technologies Used
 
 * Python
