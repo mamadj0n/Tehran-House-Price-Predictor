@@ -97,7 +97,7 @@ The application predicts the estimated house price based on the provided informa
 * Model comparison dashboard
 * Support for multiple machine learning models
 
-## Author modso
+## Author
 
 Mohamad
 Machine Learning Enthusiast
