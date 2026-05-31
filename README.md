@@ -100,4 +100,3 @@ The application predicts the estimated house price based on the provided informa
 ## Author
 
 Mohamad
-Machine Learning Enthusiast
