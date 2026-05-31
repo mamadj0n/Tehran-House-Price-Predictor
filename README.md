@@ -39,8 +39,8 @@ A machine learning web application built with Streamlit that predicts house pric
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/house-price-prediction.git
-cd house-price-prediction
+git clone https://github.com/mamadj0n/Tehran-House-Price-Predictor.git
+cd Tehran-House-Price-Predictor
 ```
 
 2. Create a virtual environment:
