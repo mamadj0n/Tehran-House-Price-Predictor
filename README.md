@@ -4,6 +4,7 @@
 ## Demo
 
 ![Application Screenshot](image_2026-05-31_235638474.png)
+
 A machine learning web application built with Streamlit that predicts house prices based on user inputs.
 
 ## Features
