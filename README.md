@@ -19,7 +19,9 @@ A machine learning web application built with Streamlit that predicts house pric
   * Warehouse
   * Elevator
   * Address/Location
+    
 * Real-time prediction
+![Application Screenshot](image_2026-06-01_000201781.png)
 
 for Downloading dataset :
 ```
