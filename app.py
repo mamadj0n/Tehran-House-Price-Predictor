@@ -24,7 +24,7 @@ with open("Address.txt", "r") as f:
     ] 
 @st.cache_resource
 def load_model():
-    return joblib.load("house_price_catboost_2.pkl")
+    return joblib.load("catboost_model.pkl")
 
 model = load_model()
 
