@@ -129,7 +129,7 @@ with tab1 :
 
 with tab2:
     lite_address = []
-    for i in rang(11):
+    for i in range(11):
         for loc in choices(addresses):
             lite_address.append(loc)
 
