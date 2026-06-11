@@ -129,8 +129,9 @@ with tab1 :
 
 with tab2:
     lite_address = []
-    for loc in choices(addresses):
-        lite_address.append(loc)
+    for i in rang(11):
+        for loc in choices(addresses):
+            lite_address.append(loc)
 
     prices = [120, 80, 60, 40, 100, 150, 130, 90, 70, 200]
 
