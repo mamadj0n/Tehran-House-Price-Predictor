@@ -16,7 +16,7 @@ st.set_page_config(
 # -------------------------
 # Load Model
 # -------------------------
-with open("Punak Pardis West Ferdows.txt", "r") as f:
+with open("Address.txt", "r") as f:
     addresses = [
         line.strip()
         for line in f.readlines()
