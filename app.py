@@ -45,7 +45,7 @@ with tab1 :
     )
 
 
-    st.image("/home/modso/Pictures/Teharn.jpg", use_container_width=True)
+    st.image("Teharn.jpg", use_container_width=True)
     # -------------------------
     # Sidebar
     # -------------------------
