@@ -2,7 +2,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 import time
-from random import choices
+import plotly.express as px
+
+
+df = pd.read_csv('house.csv')
+threshold = df["Price"].quantile(0.99)
+df = df[df["Price"] <= threshold]
 # -------------------------
 # Page Config
 # -------------------------
@@ -24,7 +29,7 @@ with open("Address.txt", "r") as f:
     ] 
 @st.cache_resource
 def load_model():
-    return joblib.load("catboost_model.pkl")
+    return joblib.load("pipeline_predict_churn.pkl")
 
 model = load_model()
 
@@ -45,7 +50,7 @@ with tab1 :
     )
 
 
-    st.image("Teharn.jpg", use_container_width=True)
+    st.image("/home/modso/Pictures/Teharn.jpg", use_container_width=True)
     # -------------------------
     # Sidebar
     # -------------------------
@@ -55,7 +60,7 @@ with tab1 :
     area = st.slider(
         "Area (m²)",
         min_value=20,
-        max_value=250,
+        max_value=500,
         value=100
     )
 
@@ -119,28 +124,31 @@ with tab1 :
 
         st.metric(
             label="Estimated House Price",
-            value=f"{price*3:,.0f} Toman"
+            value=f"{price*4:,.0f} Toman"
         )
 
 
 # -------------------------
 # Header chart page
 # -------------------------
-
 with tab2:
-    lite_address = []
-    for i in range(10):
-        for loc in choices(addresses):
-            lite_address.append(loc)
+    result = df.groupby("Address")["Price"].agg(["mean", "min", "max"]).reset_index()
 
-    prices = [120, 80, 60, 40, 100, 150, 130, 90, 70, 200]
+    result = result.sort_values("mean", ascending=False).head(20)
 
-    df = pd.DataFrame({
-        "Address": addresses,
-        "Price": prices
-    })
+    methods = {
+        "Average Price": "mean",
+        "Lowest Price": "min",
+        "Highest Price": "max"
+    }
 
-    st.bar_chart(df.set_index("Address"))    
+    user_input = st.selectbox("Select metric", list(methods.keys()))
 
+    fig = px.bar(
+        result,
+        x="Address",
+        y=methods[user_input],  
+        title=f"{user_input} House Price by Address"
+    )
 
-
+    st.plotly_chart(fig )
