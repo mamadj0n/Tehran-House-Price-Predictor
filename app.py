@@ -29,7 +29,7 @@ with open("Address.txt", "r") as f:
     ] 
 @st.cache_resource
 def load_model():
-    return joblib.load("pipeline_predict_churn.pkl")
+    return joblib.load("catboost_model.pkl")
 
 model = load_model()
 
